@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>simple progress demo</title>
+	<link rel="stylesheet" type="text/css" href="progress.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.progress.js"></script>		
+</head>
+<body>
+	<div id="progress"></div>
+	<button onclick="next()">next step</button>
+	<script type="text/javascript">
+		var progress = $.simpleProgress({
+			id:'progress',
+			step:4,
+			text:['first','second','third','forth'],
+		});
+
+		function next(){
+			progress.next();
+			if(progress.getStep() == progress.getCurrent()){
+				alert("end!");
+			}
+		}
+
+	</script>
+</body>
+</html>
